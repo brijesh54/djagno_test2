@@ -1,0 +1,505 @@
+{
+	"info": {
+		"_postman_id": "63690e85-5d32-4af1-b8f7-0ce1d83263f3",
+		"name": "djtest2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14074636"
+	},
+	"item": [
+		{
+			"name": "USER AUTH",
+			"item": [
+				{
+					"name": "SIGNUP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "full_name",
+									"value": "brijeshav",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "brijesh54",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "brijeshvasoya2@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Kgf789456@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}api/user/register/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SIGNUP",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "full_name",
+											"value": "brijeshav",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "brijesh54",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "brijeshvasoya2@yopmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Kgf789456@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base}}api/user/register/",
+									"host": [
+										"{{base}}api"
+									],
+									"path": [
+										"user",
+										"register",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 01 Sep 2024 18:25:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Created Successfully.\",\n    \"ResponseCode\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.collectionVariables.set(\"access\", jsonData.data.access);\r",
+									"pm.collectionVariables.set(\"refresh\", jsonData.data.refresh);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "yash2@yopmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Kgf789456@",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}api/user/login/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "brijeshvasoya2@yopmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Kgf789456@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base}}api/user/login/",
+									"host": [
+										"{{base}}api"
+									],
+									"path": [
+										"user",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 01 Sep 2024 18:26:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "862"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyNjUxMTE4MiwiaWF0IjoxNzI1MjE1MTgyLCJqdGkiOiJjODcwNjA5ZWNlOGI0YTc3ODc2NjllZjRmYjllYzIzMSIsInVzZXJfaWQiOjJ9.FzlFhhdxV_6m5_XG5zj7E7Gc-tMy0z2Idxrw-1aDDgI\",\n        \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1MzAxNTgyLCJpYXQiOjE3MjUyMTUxODIsImp0aSI6IjdmMzhjNjU3ZDZkODQyNmM4ZTE1MGUxZDlkYTMwZWUyIiwidXNlcl9pZCI6Mn0.Ec9Sq3msboyHpPR8-nkwKGzIhfMYROpLU3SEdp5Y8fs\",\n        \"user_id\": 2,\n        \"id\": 2,\n        \"last_login\": null,\n        \"is_superuser\": false,\n        \"first_name\": \"\",\n        \"last_name\": \"\",\n        \"is_staff\": false,\n        \"is_active\": true,\n        \"date_joined\": \"2024-09-01T18:25:00.515810Z\",\n        \"email\": \"brijeshvasoya2@yopmail.com\",\n        \"full_name\": \"brijeshav\",\n        \"username\": \"brijesh54\",\n        \"created_at\": \"2024-09-01T18:25:01.157673Z\",\n        \"active_status\": true\n    },\n    \"message\": \"User Login successfully\",\n    \"ResponseCode\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "FRIENDSHIP",
+			"item": [
+				{
+					"name": "send friend request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "43",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}api/friendship/send-request/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"friendship",
+								"send-request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my friend list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}api/friendship/friend-list/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"friendship",
+								"friend-list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request-accept-reject-ignore",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"description": "status true means user accepting request",
+									"type": "text"
+								},
+								{
+									"key": "is_ignore",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base}}api/friendship/request-accept-reject/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"friendship",
+								"request-accept-reject",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my recieve request list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}api/friendship/recieve-request-list/",
+							"host": [
+								"{{base}}api"
+							],
+							"path": [
+								"friendship",
+								"recieve-request-list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search user by email and full_name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}api/search/user_email_fullname/?search=b",
+					"host": [
+						"{{base}}api"
+					],
+					"path": [
+						"search",
+						"user_email_fullname",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://127.0.0.1:8000/",
+			"type": "string"
+		},
+		{
+			"key": "access",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
